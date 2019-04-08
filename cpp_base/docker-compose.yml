@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  server:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: feixiao/cpp_base
+    container_name: cpp_base
+    # volumes:
+    #   - .:/home/frank/wk
+    #working_dir: /home/frank/wk
+    # hostname: cpp_base
+
