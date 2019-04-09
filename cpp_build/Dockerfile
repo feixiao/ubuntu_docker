@@ -1,11 +1,10 @@
-FROM ubuntu:18.04
+FROM feixiao/cpp_base
 
 ########################################################
 # Essential packages for remote debugging and login in
 ########################################################
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y \
-    apt-utils gcc g++ openssh-server cmake build-essential gdb gdbserver rsync vim
+RUN apt-get install -y  openssh-server gdb gdbserver rsync vim
 
 RUN mkdir /var/run/sshd
 RUN echo 'root:root' | chpasswd

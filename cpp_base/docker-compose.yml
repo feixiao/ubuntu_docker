@@ -7,6 +7,7 @@ services:
       dockerfile: ./Dockerfile
     image: feixiao/cpp_base
     container_name: cpp_base
+    command: [/bin/bash]
     # volumes:
     #   - .:/home/frank/wk
     #working_dir: /home/frank/wk
