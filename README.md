@@ -25,3 +25,11 @@ docker-compose up -d
 
 docker run -dit feixiao/cpp_build /bin/bash
 ```
+
+#### janus_build
+```shell
+# build
+docker build ./ -t feixiao/janus_build
+
+docker run -dit feixiao/janus_build /bin/bash
+```
