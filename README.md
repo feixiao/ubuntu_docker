@@ -1,7 +1,7 @@
 # Ubuntu_docker
 using docker build ubuntu work platform
 
-#### cpp_base
+### cpp_base
 
 ```shell
 # build
@@ -15,7 +15,7 @@ docker-compose up -d
 docker run -dit feixiao/cpp_base /bin/bash
 ```
 
-#### cpp_build
+### cpp_build
 ```shell
 # build
 docker build ./ -t feixiao/cpp_build
@@ -26,10 +26,14 @@ docker-compose up -d
 docker run -dit feixiao/cpp_build /bin/bash
 ```
 
-#### janus_build
+### janus_build
 ```shell
 # build
 docker build ./ -t feixiao/janus_build
 
 docker run -dit feixiao/janus_build /bin/bash
 ```
+
+### 参考资料
++ [非root用户没有权限使用docker](https://blog.csdn.net/ken1583096683/article/details/82813111)
++ [ERROR: Pool overlaps with other one on this address space](http://zizhixiaoshe.com/article/21.html)

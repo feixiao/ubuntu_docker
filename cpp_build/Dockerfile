@@ -1,10 +1,13 @@
 FROM feixiao/cpp_base
 
+
+MAINTAINER "frank" feixiao2020@sina.com
+
 ########################################################
 # Essential packages for remote debugging and login in
 ########################################################
 
-RUN apt-get install -y  openssh-server gdb gdbserver rsync vim
+RUN apt install -y  openssh-server gdb gdbserver rsync vim
 
 RUN mkdir /var/run/sshd
 RUN echo 'root:root' | chpasswd
@@ -19,8 +22,8 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 # 22 for ssh server. 7777 for gdb server.
 EXPOSE 22 7777
 
-RUN useradd -ms /bin/bash debugger
-RUN echo 'debugger:pwd' | chpasswd
+RUN useradd -ms /bin/bash frank
+RUN echo 'frank:1' | chpasswd
 
 ########################################################
 # Add custom packages and development environment here
