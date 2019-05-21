@@ -1,13 +1,5 @@
 version: '3'
 
-networks:
-  devnet:
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-      - subnet: 172.16.8.0/24
-
 services:
   gdbserver:
     build:
@@ -15,17 +7,12 @@ services:
       context: ./
       dockerfile: ./Dockerfile
     image: janus_build:1.0
-    security_opt:
-      - seccomp:unconfined
-    container_name: debug
+    container_name: janus_build
     ports:
       - "2224:22"
       - "7777:7777"
     volumes:
-      - .:/home/debugger/code
-    networks:
-      devnet:
-        ipv4_address: 172.16.8.2
-    working_dir: /home/debugger/code
-    hostname: debug
+      - .:/home/frank/code
+    working_dir: /home/frank/code
+    hostname: janus_build
 

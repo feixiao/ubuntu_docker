@@ -1,4 +1,4 @@
-FROM feixiao/cpp_build
+FROM feixiao/cpp_build:v1.0
 
 RUN apt-get -y update && apt-get install -y libmicrohttpd-dev \
     libjansson-dev \
@@ -24,7 +24,7 @@ RUN apt-get -y update && apt-get install -y libmicrohttpd-dev \
     lsof wget sudo 
 
 
-RUN wget http://mirror.bit.edu.cn/apache/zookeeper/stable/zookeeper-3.4.14.tar.gz && \
+RUN wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.4.14/zookeeper-3.4.14.tar.gz && \
     tar xzvf zookeeper-3.4.14.tar.gz && \
     cd zookeeper-3.4.14/zookeeper-client/zookeeper-client-c && \
     ./configure --prefix=/usr  && \
