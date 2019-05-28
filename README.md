@@ -26,14 +26,6 @@ docker-compose up -d
 docker run -dit feixiao/cpp_build /bin/bash
 ```
 
-### janus_build
-```shell
-# build
-docker build ./ -t feixiao/janus_build
-
-docker run -dit feixiao/janus_build /bin/bash
-```
-
 ### 参考资料
 + [非root用户没有权限使用docker](https://blog.csdn.net/ken1583096683/article/details/82813111)
 + [ERROR: Pool overlaps with other one on this address space](http://zizhixiaoshe.com/article/21.html)
