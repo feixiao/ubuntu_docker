@@ -26,6 +26,18 @@ docker-compose up -d
 docker run -dit feixiao/cpp_build /bin/bash
 ```
 
+
+### 基于Ubuntu18.04 打造自己的工作平台
+# build
+docker build ./ -t feixiao/workbeach
+
+# Launch
+docker-compose up -d
+
+docker run -dit -p 10022:22 feixiao/workbeach /bin/bash -v D:\volumes\golang:/go
+```
+
+
 ### 参考资料
 + [非root用户没有权限使用docker](https://blog.csdn.net/ken1583096683/article/details/82813111)
 + [ERROR: Pool overlaps with other one on this address space](http://zizhixiaoshe.com/article/21.html)

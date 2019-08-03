@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  workbench:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: feixiao/workbench
+    container_name: workbench
+    ports:
+      - "10022:22"
+    # volumes:
+    #   - .:/home/debugger/code
+    # working_dir: /home/debugger/code
+    # hostname: debug
