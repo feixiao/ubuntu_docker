@@ -28,14 +28,15 @@ docker run -dit feixiao/cpp_build /bin/bash
 
 
 ### 基于Ubuntu18.04 打造自己的工作平台
-# build
++ build
 docker build ./ -t feixiao/workbeach
 
-# Launch
-docker-compose up -d
++ Launch
+    ```
+    docker-compose up -d
 
-docker run -dit -p 10022:22 feixiao/workbeach /bin/bash -v D:\volumes\golang:/go
-```
+    docker run -dit -p 10022:22 feixiao/workbeach /bin/bash -v D:\volumes\golang:/go
+    ```
 
 
 ### 参考资料
