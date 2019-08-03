@@ -35,7 +35,7 @@ docker build ./ -t feixiao/workbeach
     ```
     docker-compose up -d
 
-    docker run -dit -p 10000:22 feixiao/workbench:1.1 /bin/bash -v D:\volumes\golang:/home/frank/gopath:cached
+    docker run -dit -p 10000:22   -v D:\volumes\golang:/home/frank/gopath:cached feixiao/workbench:1.1
     ```
 
 
