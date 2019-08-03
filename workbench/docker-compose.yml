@@ -8,8 +8,14 @@ services:
     image: feixiao/workbench
     container_name: workbench
     ports:
-      - "10022:22"
-    # volumes:
-    #   - .:/home/debugger/code
+      - "10000:22"
+      - "10001:10001"
+      - "10002:10002"
+      - "10003:10003"
+      - "10004:10004"
+      - "10005:10005"
+      - "10006:10006"
+    volumes:
+      - D:\volumes\golang:/go
     # working_dir: /home/debugger/code
     # hostname: debug
