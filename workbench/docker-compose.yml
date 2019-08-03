@@ -16,6 +16,6 @@ services:
       - "10005:10005"
       - "10006:10006"
     volumes:
-      - D:\volumes\golang:/go
+      - D:\volumes\golang:/go:cached
     # working_dir: /home/debugger/code
     # hostname: debug

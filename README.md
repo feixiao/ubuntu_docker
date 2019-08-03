@@ -42,3 +42,4 @@ docker build ./ -t feixiao/workbeach
 ### 参考资料
 + [非root用户没有权限使用docker](https://blog.csdn.net/ken1583096683/article/details/82813111)
 + [ERROR: Pool overlaps with other one on this address space](http://zizhixiaoshe.com/article/21.html)
++ [《如何解决docker volume 共享文件下项目访问速度极慢?》](https://segmentfault.com/q/1010000011417846)
