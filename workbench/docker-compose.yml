@@ -15,3 +15,7 @@ services:
       - D:\volumes\golang:/home/frank/gopath:cached
     # working_dir: /home/debugger/code
     # hostname: debug
+
+
+
+    
