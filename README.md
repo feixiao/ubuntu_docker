@@ -38,6 +38,14 @@ docker build ./ -t feixiao/workbeach
     docker run -dit --name=wk -p 10000:22  -p 10001-10010:10001-10010 -v D:\volumes\golang:/home/frank/gopath:cached feixiao/workbench:1.1
     ```
 
+### Janus部署
+    ```
+    docker run --rm --net=host \
+        -v /home/frank/docker/data/janus/conf:/usr/local/etc/janus \
+        --name="janus"  \
+        -itd -t feixiao/janus-webrtc-gateway-docker
+    ```
+
 
 ### 参考资料
 + [非root用户没有权限使用docker](https://blog.csdn.net/ken1583096683/article/details/82813111)
