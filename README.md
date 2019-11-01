@@ -40,6 +40,10 @@ docker build ./ -t feixiao/workbeach
 
 ### Janus部署
     ```
+    # /usr/local/etc/janus
+    # /usr/local/lib/janus/transports
+    # /usr/local/lib/janus/plugins
+    
     docker run --rm --net=host \
         -v /home/frank/docker/data/janus/conf:/usr/local/etc/janus \
         --name="janus"  \
@@ -51,3 +55,4 @@ docker build ./ -t feixiao/workbeach
 + [非root用户没有权限使用docker](https://blog.csdn.net/ken1583096683/article/details/82813111)
 + [ERROR: Pool overlaps with other one on this address space](http://zizhixiaoshe.com/article/21.html)
 + [《如何解决docker volume 共享文件下项目访问速度极慢?》](https://segmentfault.com/q/1010000011417846)
++ [《在docker容器中生成core dump文件》](https://blog.csdn.net/u013774469/article/details/82427546)

@@ -1,5 +1,7 @@
 TEMPLATE_NAME ?= janus-webrtc-gateway-docker
 
+basepath=$(cd `dirname $0`; pwd)
+
 build:
 	@docker build -t feixiao/$(TEMPLATE_NAME) .
 

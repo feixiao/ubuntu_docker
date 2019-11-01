@@ -1,10 +1,12 @@
-FROM buildpack-deps:jessie
+FROM feixiao/cpp_base:1.1
 
 
 
 RUN mkdir /Janus
-ADD sources.list /etc/apt/sources.list
-COPY janus-gateway-0.6.3.zip     /Janus/janus-gateway-0.6.3.zip
+# ADD sources.list /etc/apt/sources.list
+# ADD resolv.conf /etc/resolv.conf
+
+COPY janus-gateway-0.7.4.zip     /Janus/janus-gateway-0.7.4.zip
 COPY libnice-0.1.16.tar.gz       /Janus/libnice-0.1.16.tar.gz
 COPY libwebsockets-2.4.2.zip     /Janus/libwebsockets-2.4.2.zip
 COPY libsrtp-2.2.0.tar.gz        /Janus/libsrtp-2.2.0.tar.gz
@@ -50,6 +52,10 @@ RUN cd /Janus && ls -al && tar -zxvf libsrtp-2.2.0.tar.gz && \
     ./configure --prefix=/usr --enable-openssl && \
     make shared_library && sudo make install
 
+
+# Support SIP
+RUN apt install -y libre-dev
+
 RUN apt install -y libnice-dev libglib2.0-dev
 RUN apt-get remove -y libnice-dev libnice10 && \
     apt-get update && \
@@ -66,12 +72,12 @@ RUN apt-get remove -y libnice-dev libnice10 && \
 RUN apt install nginx -y --force-yes
 
 
-RUN cd /Janus  && unzip janus-gateway-0.6.3.zip && cd ./janus-gateway-0.6.3 && \
+RUN cd /Janus  && unzip janus-gateway-0.7.4.zip && cd ./janus-gateway-0.7.4 && \
     sh autogen.sh &&  \ 
     ./configure --disable-rabbitmq --disable-mqtt && \
     make && make install && make configs && ldconfig
 
-COPY nginx.conf /usr/local/nginx/nginx.conf
+#COPY nginx.conf /usr/local/nginx/nginx.conf
 
-CMD nginx && janus
+CMD janus
 
