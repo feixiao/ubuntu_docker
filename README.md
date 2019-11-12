@@ -45,9 +45,9 @@ docker build ./ -t feixiao/workbeach
     # /usr/local/lib/janus/plugins
     
     docker run --rm --net=host \
-        -v /home/frank/docker/data/janus/conf:/usr/local/etc/janus \
+        -v /home/frank/docker/data/janus/conf:/usr/local/etc/janus/conf \
         --name="janus"  \
-        -itd -t feixiao/janus-webrtc-gateway-docker
+        -itd -t feixiao/janus-webrtc-gateway-docker:0.7.4
     ```
 
 
