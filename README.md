@@ -50,6 +50,11 @@ docker build ./ -t feixiao/workbeach
         -itd -t feixiao/janus-webrtc-gateway-docker:0.7.5
     ```
 
+### Janus开发环境
+    ```
+    docker run --net=host -dit -v /home/frank/docker/data/janus_ubuntu_build:/workspace --name="janus" feixiao/janus_ubuntu_build:1.0.0
+    ```
+
 
 ### 参考资料
 + [非root用户没有权限使用docker](https://blog.csdn.net/ken1583096683/article/details/82813111)
