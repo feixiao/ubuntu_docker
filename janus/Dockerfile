@@ -6,7 +6,7 @@ RUN mkdir /Janus
 # ADD sources.list /etc/apt/sources.list
 # ADD resolv.conf /etc/resolv.conf
 
-COPY janus-gateway-0.7.4.zip     /Janus/janus-gateway-0.7.4.zip
+COPY janus-gateway-0.7.5.zip     /Janus/janus-gateway-0.7.5.zip
 COPY libnice-0.1.16.tar.gz       /Janus/libnice-0.1.16.tar.gz
 COPY libwebsockets-2.4.2.zip     /Janus/libwebsockets-2.4.2.zip
 COPY libsrtp-2.2.0.tar.gz        /Janus/libsrtp-2.2.0.tar.gz
@@ -72,7 +72,7 @@ RUN apt-get remove -y libnice-dev libnice10 && \
 RUN apt install nginx -y --force-yes
 
 
-RUN cd /Janus  && unzip janus-gateway-0.7.4.zip && cd ./janus-gateway-0.7.4 && \
+RUN cd /Janus  && unzip janus-gateway-0.7.5.zip && cd ./janus-gateway-0.7.5 && \
     sh autogen.sh &&  \ 
     ./configure --disable-rabbitmq --disable-mqtt && \
     make && make install && make configs && ldconfig

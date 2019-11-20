@@ -1,4 +1,4 @@
-TEMPLATE_NAME ?= janus-webrtc-gateway-docker
+TEMPLATE_NAME ?= janus-webrtc-gateway-docker:0.7.5
 
 basepath=$(cd `dirname $0`; pwd)
 
