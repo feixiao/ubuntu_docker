@@ -4,7 +4,7 @@
 
 ```shell
 # build
-docker build ./ -t feixiao/mediaserver
+docker build ./ -t feixiao/mediaserver:1.1
 
 # Launch
 docker-compose up -d
