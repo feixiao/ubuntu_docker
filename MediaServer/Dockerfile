@@ -1,14 +1,22 @@
-FROM feixiao/janus_ubuntu_build:1.0.0
+FROM feixiao/janus_ubuntu_build:1.0.1
 
 LABEL maintainer="frank<feixiao2020@sina.com>"
 
-RUN apt-get update && apt install -y libxmlrpc-c++8-dev \
+RUN apt-get update && apt-get install -y  libxmlrpc-c++8-dev \
     libgsm1-dev libspeex-dev libopus-dev \
     libavresample-dev libx264-dev libvpx-dev \
-    libswscale-dev libavformat-dev libmp4v2-dev \
-    libgcrypt11-dev libjpeg-dev  
+    libswscale-dev libavformat-dev libmp4v2-dev libgcrypt11-dev libjpeg-dev  --fix-missing
 
-RUN apt install -y ninja-build  libz-dev libpng-dev 
+RUN apt-get install -y  ninja-build  libz-dev libpng-dev 
+
+RUN apt-get install -y \
+    libgstreamer1.0-0 gstreamer1.0-plugins-base \
+    gstreamer1.0-plugins-good  gstreamer1.0-plugins-ugly \
+    gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools \
+    libgstreamer-plugins-base1.0-dev libgstreamer1.0-0 \
+    gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad \
+    gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools \
+    gstreamer-plugins-base1.0-dev  
 
 # support golang 
 ENV GOLANG_VERSION 1.13.4
@@ -24,10 +32,3 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH" &&\
     echo "export GOPATH=/home/frank/gopath" >> /etc/profile  \
     echo "export PATH=/usr/local/go/bin:${PATH}" >> /etc/profile  
 
-RUN apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base \
-    gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly \ 
-    gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools \
-    libgstreamer-plugins-base1.0-dev libgstreamer1.0-0 \
-    gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad \
-    gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools \
-    gstreamer-plugins-base1.0-dev

@@ -15,3 +15,11 @@ docker run -dit --net=host --name="mediaserver"  \
     -v /home/frank/wk_webrtc:/home/frank/wk_webrtc \
     feixiao/mediaserver:1.1 /bin/bash
 ```
+
+### 项目
+```shell
+https://github.com/feixiao/media-server-go-demo
+
+
+```
+
