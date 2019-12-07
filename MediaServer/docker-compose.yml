@@ -12,6 +12,7 @@ services:
     #   - "10001-10010:10001-10010"
     volumes:
       - /Users/frank/volume/workspace:/home/frank/workspace
+    command: /bin/bash
     # working_dir: /home/debugger/code
     # hostname: debug
 
