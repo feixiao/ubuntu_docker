@@ -1,4 +1,4 @@
-FROM feixiao/janus_ubuntu_build:1.0.1
+FROM feixiao/janus_ubuntu_build:1.0
 
 LABEL maintainer="frank<feixiao2020@sina.com>"
 

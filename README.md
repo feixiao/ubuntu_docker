@@ -29,13 +29,14 @@ docker run -dit feixiao/cpp_build /bin/bash
 
 ### 基于Ubuntu18.04 打造自己的工作平台
 + build
-docker build ./ -t feixiao/workbeach
+docker build ./ -t feixiao/workbech:1.3
 
 + Launch
     ```
     docker-compose up -d
-
-    docker run -dit --name=wk -p 10000:22  -p 10001-10010:10001-10010 -v D:\volumes\golang:/home/frank/gopath:cached feixiao/workbench:1.1
+    docker run -dit --name=wk \
+        -p 10000:22  -p 10001-10010:10001-10010 \
+        -v /Users/frank/volume/workspace:/home/frank/workspace feixiao/workbench:1.3
     ```
 
 ### Janus部署

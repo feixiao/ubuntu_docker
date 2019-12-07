@@ -11,7 +11,7 @@ services:
     #   - "10000:22"
     #   - "10001-10010:10001-10010"
     volumes:
-      - /home/frank/wk_webrtc:/home/frank/wk_webrtc
+      - /Users/frank/volume/workspace:/home/frank/workspace
     # working_dir: /home/debugger/code
     # hostname: debug
 
