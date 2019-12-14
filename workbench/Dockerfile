@@ -19,10 +19,10 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH" &&\
     echo "export PATH=/usr/local/go/bin:${PATH}" >> /etc/profile  
 
 # add oh-my-shell
-RUN apt install -y zsh git 
+RUN apt update && apt install -y zsh git 
 
-# add ffmpeg
-RUN apt install ffmpeg
+
+
 
 # root安装zsh
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true 
@@ -34,4 +34,4 @@ RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -
 # 切换用户(不切换回来，导致容器不能启动)
 USER root 
 
-WORKDIR $GOPATH
+WORKDIR /home/frank
