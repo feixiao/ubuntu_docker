@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  mediaserver:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: feixiao/mediaserver:1.1
+    container_name: mediaserver
+    # ports:
+    #   - "10000:22"
+    #   - "10001-10010:10001-10010"
+    volumes:
+      - /home/frank/wk_webrtc:/home/frank/wk_webrtc
+    # working_dir: /home/debugger/code
+    # hostname: debug
+
+
+
+    

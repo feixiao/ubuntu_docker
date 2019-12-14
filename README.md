@@ -18,12 +18,12 @@ docker run -dit feixiao/cpp_base /bin/bash
 ### cpp_build
 ```shell
 # build
-docker build ./ -t feixiao/cpp_build
+docker build ./ -t feixiao/cpp_build:1.2
 
 # Launch
 docker-compose up -d
 
-docker run -dit feixiao/cpp_build /bin/bash
+docker run -dit feixiao/cpp_build:1.2 /bin/bash
 ```
 
 
@@ -53,7 +53,9 @@ docker build ./ -t feixiao/workbech:1.3
 
 ### Janus开发环境
     ```
-    docker run --net=host -dit -v /home/frank/docker/data/janus_ubuntu_build:/workspace --name="janus" feixiao/janus_ubuntu_build:1.0.0
+    docker run --net=host -dit \
+        -v /home/frank/docker/data/janus_ubuntu_build:/workspace \
+        --name="janus" feixiao/janus_ubuntu_build:1.0.0
     ```
 
 
