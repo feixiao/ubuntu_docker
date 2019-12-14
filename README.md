@@ -18,12 +18,12 @@ docker run -dit feixiao/cpp_base /bin/bash
 ### cpp_build
 ```shell
 # build
-docker build ./ -t feixiao/cpp_build
+docker build ./ -t feixiao/cpp_build:1.2
 
 # Launch
 docker-compose up -d
 
-docker run -dit feixiao/cpp_build /bin/bash
+docker run -dit feixiao/cpp_build:1.2 /bin/bash
 ```
 
 
