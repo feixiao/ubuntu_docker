@@ -53,7 +53,9 @@ docker build ./ -t feixiao/workbech:1.3
 
 ### Janus开发环境
     ```
-    docker run --net=host -dit -v /home/frank/docker/data/janus_ubuntu_build:/workspace --name="janus" feixiao/janus_ubuntu_build:1.0.0
+    docker run --net=host -dit \
+        -v /home/frank/docker/data/janus_ubuntu_build:/workspace \
+        --name="janus" feixiao/janus_ubuntu_build:1.0.0
     ```
 
 

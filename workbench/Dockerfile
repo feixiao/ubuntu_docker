@@ -1,4 +1,4 @@
-FROM feixiao/cpp_build:1.1
+FROM feixiao/cpp_build:1.2
 
 LABEL maintainer="frank<feixiao2020@sina.com>"
 
