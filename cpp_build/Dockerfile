@@ -24,7 +24,7 @@ EXPOSE 22
 
 RUN useradd -ms /bin/bash frank
 RUN echo 'frank:1' | chpasswd
-
+RUN echo 'frank  ALL=(ALL:ALL) ALL' >> /etc/sudoers
 ########################################################
 # Add custom packages and development environment here
 ########################################################
