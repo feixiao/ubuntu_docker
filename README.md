@@ -32,7 +32,7 @@ docker run -dit feixiao/cpp_build:1.2 /bin/bash
 docker build ./ -t feixiao/workbech:1.3
 
 + Launch
-    ```
+    ```shell
     docker-compose up -d
     docker run -dit --name=wk \
         -p 10000:22  -p 10001-10010:10001-10010 \
@@ -40,7 +40,6 @@ docker build ./ -t feixiao/workbech:1.3
     ```
 
 ### Janus部署
-    ```
     # /usr/local/etc/janus
     # /usr/local/lib/janus/transports
     # /usr/local/lib/janus/plugins
@@ -49,14 +48,12 @@ docker build ./ -t feixiao/workbech:1.3
         -v /opt/janus/conf:/usr/local/etc/janus \
         --name="janus0.7.5"  \
         -itd -t feixiao/janus-webrtc-gateway-docker:0.7.5
-    ```
 
 ### Janus开发环境
-    ```
+
     docker run --net=host -dit \
         -v /home/frank/docker/data/janus_ubuntu_build:/workspace \
-        --name="janus" feixiao/janus_ubuntu_build:1.0.0
-    ```
+        --name="janus" feixiao/janus_ubuntu_build:1.0
 
 
 ### 参考资料
