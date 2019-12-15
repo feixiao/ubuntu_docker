@@ -91,4 +91,7 @@ RUN apt-get install -y  ninja-build  libz-dev libpng-dev
 # mediaserver stop
 
 
+# support gstreamer
+RUN apt-get install -y gstreamer-plugins-*  gstreamer-*
+
 WORKDIR /home/frank
