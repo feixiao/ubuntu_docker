@@ -1,4 +1,4 @@
-FROM feixiao/cpp_build:1.2
+FROM feixiao/cpp_build:1.3
 
 LABEL maintainer="frank<feixiao2020@sina.com>"
 
@@ -40,7 +40,6 @@ COPY libsrtp-2.2.0.tar.gz        /wk/libsrtp-2.2.0.tar.gz
 
 RUN apt-get -y update && apt-get install -y libmicrohttpd-dev \
     libjansson-dev \
-    libnice-dev \
     libssl-dev \
     libsrtp-dev \
     libsofia-sip-ua-dev \
@@ -54,13 +53,10 @@ RUN apt-get -y update && apt-get install -y libmicrohttpd-dev \
     gengetopt \
     libtool \
     automake \
-    build-essential \
     subversion \
-    git \
-    cmake \
     unzip \
     zip \
-    lsof wget vim sudo  --force-yes
+    lsof    
 
  # If you want to use the openssl instead of boringssl
 RUN apt-get update -y && apt-get install -y libssl-dev --force-yes
@@ -71,13 +67,13 @@ RUN cd /wk && ls -al && unzip libwebsockets-2.4.2.zip && \
     mkdir build && \
     cd build && \
     cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_C_FLAGS="-fpic" .. && \
-    make && sudo make install
+    make &&  make install
 
 
 RUN cd /wk && ls -al && tar -zxvf libsrtp-2.2.0.tar.gz && \
     cd libsrtp-2.2.0 && \
     ./configure --prefix=/usr --enable-openssl && \
-    make shared_library && sudo make install 
+    make shared_library &&  make install 
 
 # Support SIP
 RUN apt install -y libre-dev
