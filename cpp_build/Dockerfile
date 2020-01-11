@@ -7,7 +7,7 @@ LABEL maintainer="frank<feixiao2020@sina.com>"
 # Essential packages for remote debugging and login in
 ########################################################
 
-RUN apt install -y  openssh-server  
+RUN apt install -y  openssh-server  sudo
 
 RUN mkdir /var/run/sshd
 RUN echo 'root:root' | chpasswd

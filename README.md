@@ -18,12 +18,12 @@ docker run -dit feixiao/cpp_base /bin/bash
 ### cpp_build
 ```shell
 # build
-docker build ./ -t feixiao/cpp_build:1.3
+docker build ./ -t feixiao/cpp_build:1.4
 
 # Launch
 docker-compose up -d
 
-docker run --rm -dit -p 60022:22 -name="cpp_build" feixiao/cpp_build:1.3 
+docker run --rm -dit -p 60022:22 --name="cpp_build" feixiao/cpp_build:1.4
 ```
 
 
