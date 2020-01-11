@@ -29,14 +29,20 @@ docker run --rm -dit -p 60022:22 --name="cpp_build" feixiao/cpp_build:1.4
 
 ### 基于Ubuntu18.04 打造自己的工作平台
 + build
-docker build ./ -t feixiao/workbech:1.3
+docker build ./ -t feixiao/workbech:1.6
 
 + Launch
     ```shell
-    docker-compose up -d
-    docker run -dit --name=wk \
+
+    # OSX
+    docker run --restart=always -dit --name=wk \
         -p 10000:22  -p 10001-10010:10001-10010 \
-        -v /Users/frank/volume/workspace:/home/frank/workspace feixiao/workbench:1.3
+        -v /Users/frank/volume/workspace:/home/frank/workspace feixiao/workbench:1.6
+
+    # Ubuntu
+    docker run --restart=always -dit --name=wk \
+        -p 10000:22  -p 10001-10010:10001-10010 \
+        -v /home/frank/volumes/workbench:/home/frank/workspace feixiao/workbench:1.6    
     ```
 
 ### Janus部署

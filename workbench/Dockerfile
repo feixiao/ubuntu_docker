@@ -1,11 +1,11 @@
-FROM feixiao/cpp_build:1.3
+FROM feixiao/cpp_build:1.4
 
 LABEL maintainer="frank<feixiao2020@sina.com>"
 
 
 # support golang 
-ENV GOLANG_VERSION 1.12.7
-ENV GOLANG_DOWNLOAD_URL https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz
+ENV GOLANG_VERSION 1.13.5
+ENV GOLANG_DOWNLOAD_URL https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz
 RUN curl -fsSL "$GOLANG_DOWNLOAD_URL" -o golang.tar.gz \
     && tar -C /usr/local -xzf golang.tar.gz \
     && rm -f golang.tar.gz

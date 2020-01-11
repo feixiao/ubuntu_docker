@@ -1,4 +1,4 @@
-TEMPLATE_NAME ?= workbench:1.5
+TEMPLATE_NAME ?= workbench:1.6
 
 basepath=$(cd `dirname $0`; pwd)
 
