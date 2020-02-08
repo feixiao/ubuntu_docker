@@ -7,7 +7,7 @@ LABEL maintainer="frank<feixiao2020@sina.com>"
 # Essential packages for remote debugging and login in
 ########################################################
 
-RUN apt install -y  openssh-server  
+RUN apt install -y  openssh-server  sudo
 
 RUN mkdir /var/run/sshd
 RUN echo 'root:root' | chpasswd
@@ -26,6 +26,8 @@ RUN useradd -ms /bin/bash frank
 RUN echo 'frank:1' | chpasswd
 
 RUN sudo apt install lrzsz -y
+
+RUN echo 'frank  ALL=(ALL:ALL) ALL' >> /etc/sudoers
 
 ########################################################
 # Add custom packages and development environment here
