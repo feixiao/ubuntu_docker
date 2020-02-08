@@ -18,20 +18,20 @@ docker run -dit feixiao/cpp_base /bin/bash
 ### cpp_build
 ```shell
 # build
-docker build ./ -t feixiao/cpp_build:1.5
+docker build ./ -t feixiao/cpp_build:1.6
 
 
 # Launch
 docker-compose up -d
 
-docker run --rm -dit -p 60022:22 --name="cpp_build" feixiao/cpp_build:1.5
+docker run --rm -dit -p 60022:22 --name="cpp_build" feixiao/cpp_build:1.6
 
 ```
 
 
 ### 基于Ubuntu18.04 打造自己的工作平台
 + build
-docker build ./ -t feixiao/workbech:1.6
+docker build ./ -t feixiao/workbech:1.7
 
 + Launch
     ```shell
