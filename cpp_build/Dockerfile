@@ -25,6 +25,8 @@ EXPOSE 22
 RUN useradd -ms /bin/bash frank
 RUN echo 'frank:1' | chpasswd
 
+RUN sudo apt install lrzsz -y
+
 ########################################################
 # Add custom packages and development environment here
 ########################################################
