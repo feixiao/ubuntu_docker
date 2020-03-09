@@ -1,4 +1,4 @@
-FROM feixiao/cpp_base:1.1
+FROM feixiao/cpp_build:1.5
 
 
 
