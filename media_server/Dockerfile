@@ -2,12 +2,15 @@ FROM feixiao/janus_ubuntu_build:1.1
 
 LABEL maintainer="frank<feixiao2020@sina.com>"
 
+COPY libsrtp-2.2.0.tar.gz        /tmp/libsrtp-2.2.0.tar.gz
+
 RUN apt-get update && apt-get install -y  libxmlrpc-c++8-dev \
-    libgsm1-dev libspeex-dev libopus-dev \
-    libavresample-dev libx264-dev libvpx-dev \
-    libswscale-dev libavformat-dev libmp4v2-dev libgcrypt11-dev libjpeg-dev  --fix-missing
+    libgsm1-dev libspeex-dev libopus-dev libx264-dev libvpx-dev \
+    libmp4v2-dev libgcrypt11-dev libjpeg-dev  --fix-missing
 
 RUN apt-get install -y  ninja-build  libz-dev libpng-dev 
+
+RUN apt install -y libavformat-dev libavcodec-dev libswresample-dev libswscale-dev libavutil-dev
 
 RUN apt-get install -y \
     libgstreamer1.0-0 gstreamer1.0-plugins-base \
@@ -17,6 +20,17 @@ RUN apt-get install -y \
     gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad \
     gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools \
     gstreamer-plugins-base1.0-dev  
+
+
+RUN cd /tmp && ls -al && tar -zxvf libsrtp-2.2.0.tar.gz && \
+    cd libsrtp-2.2.0 && \
+    ./configure --prefix=/usr/local --enable-openssl && \
+    make  && sudo make install
+
+# mp4v2
+# RUN git clone https://github.com/medooze/mp4v2.git && cd mp4v2 && autoreconf -fiv && \
+#     ./configure && make -j 4 && make install
+
 
 # support golang 
 ENV GOLANG_VERSION 1.13.4
