@@ -13,7 +13,7 @@ docker-compose up -d
 # 所以带 /bin/bash
 docker run -dit --name="mediaserver"  \
     -p 10100:22  -p 10101-10110:10101-10110 \
-    -v /home/frank/ms:/home/frank/volumes/ms \
+    -v /home/frank/volumes/ms:/home/frank/ms \
     feixiao/mediaserver:1.3 
 ```
 
