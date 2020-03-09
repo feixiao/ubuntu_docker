@@ -39,12 +39,12 @@ docker build ./ -t feixiao/workbech:1.7
     # OSX
     docker run --restart=always -dit --name=wk \
         -p 10000:22  -p 10001-10010:10001-10010 \
-        -v /Users/frank/volume/workspace:/home/frank/workspace feixiao/workbench:1.6
+        -v /Users/frank/volume/workspace:/home/frank/workspace feixiao/workbench:1.7
 
     # Ubuntu
     docker run --restart=always -dit --name=wk \
         -p 10000:22  -p 10001-10010:10001-10010 \
-        -v /home/frank/volumes/workbench:/home/frank/workspace feixiao/workbench:1.6    
+        -v /home/frank/volumes/workbench:/home/frank/workspace feixiao/workbench:1.7  
     ```
 
 ### Janus部署

@@ -9,11 +9,11 @@ build-nocache:
 	@docker build --no-cache -t feixiao/$(TEMPLATE_NAME) .
 
 bash: 
-	@docker run --rm --net=host --name="janus_ubuntu_build" -it -t feixiao/$(TEMPLATE_NAME) /bin/bash
+	@docker run --rm -p 10100:22  -p 10101-10110:10101-10110 --name="janus_ubuntu_build" -it -t feixiao/$(TEMPLATE_NAME) /bin/bash
 
 run: 
-	@docker run --rm --net=host --name="janus_ubuntu_build" -it -t feixiao/$(TEMPLATE_NAME) 
+	@docker run --rm -p 10100:22  -p 10101-10110:10101-10110 --name="janus_ubuntu_build" -it -t feixiao/$(TEMPLATE_NAME) 
 
 
 run-hide: 
-	@docker run --rm --net=host --name="janus_ubuntu_build" -it -t feixiao/$(TEMPLATE_NAME) >> /dev/null 
+	@docker run --rm -p 10100:22  -p 10101-10110:10101-10110 --name="janus_ubuntu_build" -it -t feixiao/$(TEMPLATE_NAME) >> /dev/null 

@@ -1,4 +1,4 @@
-FROM feixiao/janus_ubuntu_build:1.0.1
+FROM feixiao/janus_ubuntu_build:1.1
 
 LABEL maintainer="frank<feixiao2020@sina.com>"
 
@@ -31,4 +31,3 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH" &&\
     echo "export GOROOT=/usr/local/go" >> /etc/profile && \
     echo "export GOPATH=/home/frank/gopath" >> /etc/profile  \
     echo "export PATH=/usr/local/go/bin:${PATH}" >> /etc/profile  
-
