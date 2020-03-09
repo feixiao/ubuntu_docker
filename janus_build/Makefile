@@ -1,4 +1,4 @@
-TEMPLATE_NAME ?= janus_ubuntu_build:1.0
+TEMPLATE_NAME ?= janus_ubuntu_build:1.1
 
 basepath=$(cd `dirname $0`; pwd)
 
