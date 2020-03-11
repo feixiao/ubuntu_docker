@@ -1,5 +1,6 @@
 # Ubuntu_docker
-using docker build ubuntu work platform
+构建基于Docker的Linux C++开发环境。
+
 
 ### cpp_base
 
