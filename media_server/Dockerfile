@@ -10,7 +10,7 @@ RUN apt-get install -y  libxmlrpc-c++8-dev \
 
 RUN apt update && apt install  -y  ninja-build    libgcrypt11-dev libssl-dev 
 
-RUN apt install -y libavformat-dev libavcodec-dev libswresample-dev libswscale-dev libavutil-dev
+RUN apt install -y libavformat-dev libavcodec-dev libswresample-dev libswscale-dev libavutil-dev libavresample-dev
 
 RUN apt-get install -y \
     libgstreamer1.0-0 gstreamer1.0-plugins-base \
