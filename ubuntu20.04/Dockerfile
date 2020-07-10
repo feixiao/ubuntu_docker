@@ -18,7 +18,7 @@ RUN apt install -y gcc g++  cmake build-essential  ninja-build
 
 RUN apt install -y vim curl gdb git wget 
 
-RUN apt install -y  openssh-server  sudo
+RUN apt install -y  openssh-server  sudo rsync
 
 RUN mkdir /var/run/sshd
 RUN echo 'root:root' | chpasswd
