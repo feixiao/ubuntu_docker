@@ -20,6 +20,10 @@ RUN apt install -y vim curl gdb git wget
 
 RUN apt install -y  openssh-server  sudo rsync
 
+RUN sudo apt install -y libopus-dev libmp3lame-dev libfdk-aac-dev \
+    libvpx-dev libx264-dev yasm libass-dev libtheora-dev libvorbis-dev \ 
+    mercurial
+    
 RUN mkdir /var/run/sshd
 RUN echo 'root:root' | chpasswd
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config

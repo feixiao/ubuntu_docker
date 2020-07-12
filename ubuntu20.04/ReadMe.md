@@ -16,3 +16,6 @@ docker build ./ -t feixiao/cpp_build_20:1.0
 ```shell
 docker push  feixiao/cpp_build_20:1.0
 ```
+
+#### 参考资料
++ [ubuntu-20-04-ffmpeg](https://linuxconfig.org/ubuntu-20-04-ffmpeg-installation)
