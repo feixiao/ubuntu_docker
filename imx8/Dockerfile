@@ -47,6 +47,8 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
     libz-dev \
     bc \
     rsync \
+    gpg-agent \
+    ssh \
     python2.7
     # python3.8
 
@@ -54,12 +56,6 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
 RUN cp -f /usr/bin/python2.7 /usr/bin/python
 RUN apt-get purge -y --auto-remove \
     && apt-get clean && apt-get autoremove && rm -rf /var/lib/apt/lists/*
-
-
-RUN git config --global user.email "feixiao2020@sina.com" && \
-    git config --global user.name "frank" && \
-    git config --global http.sslVerify false && \
-    git config --global http.postBuffer 1048576000 
 
 RUN curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo > /usr/bin/repo && \
     chmod a+x /usr/bin/repo
