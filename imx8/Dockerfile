@@ -7,11 +7,12 @@ USER root
  
 # Install dependencies
 RUN apt-get -y update && apt-get install -y --no-install-recommends \
+    software-properties-common \
     build-essential \
     file \
     apt-utils \
     git \
-    # repo \
+    vim \
     flex \
     bison \
     gperf \
@@ -45,9 +46,12 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
     m4 \
     libz-dev \
     bc \
-    rsync 
+    rsync \
+    python2.7
+    # python3.8
 
 
+RUN cp -f /usr/bin/python2.7 /usr/bin/python
 RUN apt-get purge -y --auto-remove \
     && apt-get clean && apt-get autoremove && rm -rf /var/lib/apt/lists/*
 
@@ -57,11 +61,9 @@ RUN git config --global user.email "feixiao2020@sina.com" && \
     git config --global http.sslVerify false && \
     git config --global http.postBuffer 1048576000 
 
-RUN mkdir bin && \
-    curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo > bin/repo && \
-    chmod a+x bin/repo
+RUN curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo > /usr/bin/repo && \
+    chmod a+x /usr/bin/repo
 
-RUN echo "export PATH=${PATH}:/android-build/bin" >> /etc/profile
 RUN echo "export REPO_URL='https://mirrors.bfsu.edu.cn/git/git-repo'" >> /etc/profile
 
 
