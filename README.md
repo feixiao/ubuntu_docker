@@ -75,3 +75,4 @@ docker run --rm -dit -p 60022:22 --name="cpp_build" feixiao/cpp_build:1.5
 - [ERROR: Pool overlaps with other one on this address space](http://zizhixiaoshe.com/article/21.html)
 - [《如何解决 docker volume 共享文件下项目访问速度极慢?》](https://segmentfault.com/q/1010000011417846)
 - [《在 docker 容器中生成 core dump 文件》](https://blog.csdn.net/u013774469/article/details/82427546)
+- [《跨平台构建 Docker 镜像新姿势 x86、arm 一把梭》](https://mp.weixin.qq.com/s/okTP4VNXKDvaCIUnJ3hQDQ)
