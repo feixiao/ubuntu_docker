@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export NODE1=172.28.191.126
+export NODE1=localhost
 
 docker volume create --name etcd-data
 export DATA_DIR="etcd-data"
