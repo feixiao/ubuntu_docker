@@ -12,7 +12,7 @@ sh gitlab.sh
 
 #### 配置
 ```
-vim ${GITLAB_PATH}/config/gitlab.rb
+vi /etc/gitlab/gitlab.rb
 
 # 配置http协议所使用的访问地址,不加端口号默认为80
 external_url 'http://mine.gitlab.com'
@@ -28,5 +28,5 @@ docker restart gitlab
 docker exec -it gitlab gitlab-ctl reconfigure 
 
 # 查看管理密码（root账号的登入密码）
-${GITLAB_PATH}/config/initial_root_password
+/etc/gitlab/initial_root_password
 ```
