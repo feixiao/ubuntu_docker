@@ -77,3 +77,4 @@ docker run --rm -dit -p 60022:22 --name="cpp_build" feixiao/cpp_build:1.5
 - [《在 docker 容器中生成 core dump 文件》](https://blog.csdn.net/u013774469/article/details/82427546)
 - [《跨平台构建 Docker 镜像新姿势 x86、arm 一把梭》](https://mp.weixin.qq.com/s/okTP4VNXKDvaCIUnJ3hQDQ)
 - [《gcr.io，ghcr.io，k8s.gcr.io，quay.io 国内镜像加速服务整理分享》](https://www.nenufm.com/dorthl/291/)
+- [《Windows系统安装WSL，并安装docker服务》](https://blog.csdn.net/xiaohuaidan007/article/details/130160286)
