@@ -16,3 +16,6 @@ run:
 
 run-hide: 
 	@docker run --rm --net=host --name="workbench" -itd -t feixiao/$(TEMPLATE_NAME) >> /dev/null 
+
+stop:
+    @docker stop workbench

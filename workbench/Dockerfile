@@ -37,6 +37,7 @@ USER root
 RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-4.7.12.1-Linux-x86_64.sh  && mv Miniconda3-4.7.12.1-Linux-x86_64.sh Miniconda3-latest-Linux-x86_64.sh 
 RUN bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda && rm -rf Miniconda3-latest-Linux-x86_64.sh
 RUN /opt/conda/bin/conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+RUN echo "export PATH=/opt/conda/bin:${PATH}" >> /etc/profile
 
 RUN apt-get install -y gengetopt \
     libtool \
