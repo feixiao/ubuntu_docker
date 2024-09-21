@@ -15,7 +15,7 @@ run:
 	@docker run --rm -p 60022:22 --name="workbench" -v workbench:/home/frank/workspace  -itd -t feixiao/$(TEMPLATE_NAME) 
 
 run-hide: 
-	@docker run --rm --net=host --name="workbench" -itd -t feixiao/$(TEMPLATE_NAME) >> /dev/null 
+	@docker run -p 60022:22 --name="workbench" -v workbench:/home/frank/workspace -itd -t feixiao/$(TEMPLATE_NAME) >> /dev/null 
 
 stop:
-    @docker stop workbench
+	@docker stop workbench
