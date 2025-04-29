@@ -12,10 +12,7 @@ bash:
 	@docker run --rm --net=host --name="workbench" -it -t feixiao/$(TEMPLATE_NAME) /bin/bash
 
 run: 
-	@docker run --rm -p 60022:22 --name="workbench" -v workbench:/home/frank/workspace  -itd -t feixiao/$(TEMPLATE_NAME) 
+	@docker run --rm -p 60022:22 --name="workbench" -v workbench:/home/frank/workspace  -it -t feixiao/$(TEMPLATE_NAME) 
 
 run-hide: 
-	@docker run -p 60022:22 --name="workbench" -v workbench:/home/frank/workspace -itd -t feixiao/$(TEMPLATE_NAME) >> /dev/null 
-
-stop:
-	@docker stop workbench
+	@docker run --rm --net=host --name="workbench" -it -t feixiao/$(TEMPLATE_NAME) >> /dev/null 

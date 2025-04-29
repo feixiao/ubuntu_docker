@@ -40,9 +40,16 @@ docker run --rm -dit -p 60022:22 --name="cpp_build" feixiao/cpp_build:1.5
 - Launch
 
   ```shell
+
+  # OSX
   docker run --restart=always -dit --name=wk \
       -p 10000:22  -p 10001-10010:10001-10010 \
-      -v workbech:/home/frank/workspace feixiao/workbench:1.7
+      -v /Users/frank/volume/workspace:/home/frank/workspace feixiao/workbench:1.7
+
+  # Ubuntu
+  docker run --restart=always -dit --name=wk \
+      -p 10000:22  -p 10001-10010:10001-10010 \
+      -v /home/frank/volumes/workbench:/home/frank/workspace feixiao/workbench:1.7
   ```
 
 ### Janus 部署
