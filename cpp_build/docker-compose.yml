@@ -5,8 +5,8 @@ services:
     build:
       context: ./
       dockerfile: ./Dockerfile
-    image: cpp_base_2504
-    container_name: cpp_base_2504
+    image: cpp_build_2504
+    container_name: cpp_build_2504
     ports:
       - "2224:22"
       - "7777:7777"
