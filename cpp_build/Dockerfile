@@ -9,7 +9,7 @@ LABEL maintainer="frank<feixiao2020@sina.com>"
 
 RUN apt install -y  openssh-server  sudo
 
-RUN mkdir /var/run/sshd
+#RUN mkdir /var/run/sshd
 RUN echo 'root:root' | chpasswd
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN echo "PubkeyAcceptedKeyTypes=+ssh-rsa" >> /etc/ssh/sshd_config
