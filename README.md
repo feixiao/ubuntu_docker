@@ -6,7 +6,7 @@
 
 
 
-### 基于 Ubuntu24.04 打造自己的工作平台
+### 基于 Ubuntu25.04 打造自己的工作平台
 
 - build
   docker build ./ -t feixiao/workbech:1.7
