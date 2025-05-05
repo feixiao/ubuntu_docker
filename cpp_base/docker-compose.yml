@@ -5,8 +5,8 @@ services:
     build:
       context: ./
       dockerfile: ./Dockerfile
-    image: feixiao/cpp_base
-    container_name: cpp_base
+    image: feixiao/cpp_base_2404
+    container_name: cpp_base_2404
     command: [/bin/bash]
     # volumes:
     #   - .:/home/frank/wk

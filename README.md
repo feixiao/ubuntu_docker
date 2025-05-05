@@ -4,35 +4,9 @@
 
 - [现成镜像的部署](https://github.com/feixiao/shell/tree/master/docker)
 
-### cpp_base
-
-```shell
-# build
-docker build ./ -t feixiao/cpp_base
-
-# Launch
-docker-compose up -d
-
-# docker容器运行必须有一个前台进程， 如果没有前台进程执行，容器认为空闲，就会自行退出
-# 所以带 /bin/bash
-docker run -dit feixiao/cpp_base /bin/bash
-```
-
-### cpp_build
-
-```shell
-# build
-docker build ./ -t feixiao/cpp_build:1.5
 
 
-# Launch
-docker-compose up -d
-
-docker run --rm -dit -p 60022:22 --name="cpp_build" feixiao/cpp_build:1.5
-
-```
-
-### 基于 Ubuntu18.04 打造自己的工作平台
+### 基于 Ubuntu24.04 打造自己的工作平台
 
 - build
   docker build ./ -t feixiao/workbech:1.7

@@ -1,4 +1,4 @@
-TEMPLATE_NAME ?= cpp_base:1.5
+TEMPLATE_NAME ?= cpp_base_2404:1.0
 
 basepath=$(cd `dirname $0`; pwd)
 
