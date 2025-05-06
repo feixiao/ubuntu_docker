@@ -16,3 +16,6 @@ run:
 
 run-hide: 
 	@docker run --rm --name="cpp_base_2504" -it -t feixiao/$(TEMPLATE_NAME) >> /dev/null 
+
+push:
+	@docker push feixiao/$(TEMPLATE_NAME)
