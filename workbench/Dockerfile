@@ -19,11 +19,11 @@ RUN wget https://gitee.com/Devkings/oh_my_zsh_install/raw/master/install.sh -O -
 # 切换用户(不切换回来，导致容器不能启动)
 USER root 
 
-# support Miniconda3
-RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-4.7.12.1-Linux-x86_64.sh  && mv Miniconda3-4.7.12.1-Linux-x86_64.sh Miniconda3-latest-Linux-x86_64.sh 
-RUN bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda && rm -rf Miniconda3-latest-Linux-x86_64.sh
-RUN /opt/conda/bin/conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-RUN echo "export PATH=/opt/conda/bin:${PATH}" >> /etc/profile
+# # support Miniconda3
+# RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-4.7.12.1-Linux-x86_64.sh  && mv Miniconda3-4.7.12.1-Linux-x86_64.sh Miniconda3-latest-Linux-x86_64.sh 
+# RUN bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda && rm -rf Miniconda3-latest-Linux-x86_64.sh
+# RUN /opt/conda/bin/conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+# RUN echo "export PATH=/opt/conda/bin:${PATH}" >> /etc/profile
 
 RUN apt-get install -y gengetopt \
     libtool \
