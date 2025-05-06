@@ -1,22 +1,8 @@
-FROM feixiao/cpp_build:1.5
+FROM feixiao/cpp_build_2504:1.0
 
 LABEL maintainer="frank<feixiao2020@sina.com>"
 
 
-# support golang 
-ENV GOLANG_DOWNLOAD_URL https://dl.google.com/go/go1.23.1.linux-amd64.tar.gz
-RUN curl -fsSL "$GOLANG_DOWNLOAD_URL" -o golang.tar.gz \
-    && tar -C /usr/local -xzf golang.tar.gz \
-    && rm -f golang.tar.gz
-
-# 为了ssh登入可以直接使用ssh
-ENV GOPATH /home/frank/gopath
-ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
-RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH" &&\
-    echo "export GOROOT=/usr/local/go" >> /etc/profile && \
-    echo "export GOPATH=/home/frank/gopath" >> /etc/profile  \
-    echo "export GOPROXY=https://goproxy.cn" >> /etc/profile \
-    echo "export PATH=/usr/local/go/bin:${PATH}" >> /etc/profile 
 
 # add oh-my-shell
 RUN apt update && apt install -y zsh git 
@@ -49,9 +35,6 @@ RUN apt-get install -y gengetopt \
 
 
 RUN apt-get install -y  ninja-build  libz-dev libpng-dev 
-
-# support gstreamer
-RUN apt-get install -y libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-good
 
 
 

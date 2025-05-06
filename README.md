@@ -6,35 +6,6 @@
 
 
 
-### 基于 Ubuntu25.04 打造自己的工作平台
-
-- build
-  docker build ./ -t feixiao/workbech:1.7
-
-- Launch
-
-  ```shell
-  docker run --restart=always -dit --name=wk \
-      -p 10000:22  -p 10001-10010:10001-10010 \
-      -v workbech:/home/frank/workspace feixiao/workbench:1.7
-  ```
-
-### Janus 部署
-
-    # /usr/local/etc/janus
-    # /usr/local/lib/janus/transports
-    # /usr/local/lib/janus/plugins
-
-    docker run --net=host \
-        -v /opt/janus/conf:/usr/local/etc/janus \
-        --name="janus0.7.5"  \
-        -itd -t feixiao/janus-webrtc-gateway-docker:0.7.5
-
-### Janus 开发环境
-
-    docker run --net=host -dit \
-        -v /home/frank/docker/data/janus_ubuntu_build:/workspace \
-        --name="janus" feixiao/janus_ubuntu_build:1.0
 
 ### 参考资料
 
