@@ -16,3 +16,6 @@ run:
 
 run-hide: 
 	@docker run --platform linux/amd64 --rm --name="cpp_build_2504" -p 60022:22 -it -t feixiao/$(TEMPLATE_NAME) >> /dev/null 
+
+push:
+	@docker push feixiao/$(TEMPLATE_NAME)

@@ -17,5 +17,8 @@ run:
 run-hide: 
 	@docker run --platform linux/amd64 -p 60022:22 --name="workbench_2504" -v workbench:/home/frank/workspace -itd -t feixiao/$(TEMPLATE_NAME) >> /dev/null 
 
+push:
+	@docker push feixiao/$(TEMPLATE_NAME)
+	
 stop:
 	@docker stop workbench_2504
