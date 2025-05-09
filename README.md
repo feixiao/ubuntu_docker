@@ -9,8 +9,11 @@
 #### 运行
 ```shell
 docker run --platform linux/amd64 -p 60022:22 \
+    --add-host host.docker.internal:host-gateway \
     --name="workbench_2504" -v workbench:/home/frank/workspace \
     -itd -t feixiao/workbench_2504:1.0
+
+# Docker 提供了一个特殊域名 host.docker.internal，指向宿主机的 IP
 ```
 
 ### 参考资料
