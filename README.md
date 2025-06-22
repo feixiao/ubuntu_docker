@@ -10,6 +10,7 @@
 ```shell
 docker run --platform linux/amd64 -p 60022:22 \
     --add-host host.docker.internal:host-gateway \
+    --restart=unless-stopped \
     --name="workbench_2504" -v ~/volume/workbench:/home/frank/workspace \
     -itd -t feixiao/workbench_2504:1.0
 
