@@ -17,6 +17,10 @@ docker run --platform linux/amd64 -p 60022:22 \
 # Docker 提供了一个特殊域名 host.docker.internal，指向宿主机的 IP
 ```
 
+
+#### 可用镜像
++ [openclaw-docker](https://github.com/phioranex/openclaw-docker) openclaw-docker
+
 ### 参考资料
 
 - [非 root 用户没有权限使用 docker](https://blog.csdn.net/ken1583096683/article/details/82813111)
