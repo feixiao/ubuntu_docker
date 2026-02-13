@@ -20,6 +20,22 @@ docker run --platform linux/amd64 -p 60022:22 \
 
 #### 可用镜像
 + [openclaw-docker](https://github.com/phioranex/openclaw-docker) openclaw-docker
+```shell
+Quick reference:
+  Dashboard:      http://localhost:18790/?token=YOUR_TOKEN
+  GET TOKEN:      http://localhost:18790/?token=YOUR_TOKEN
+  Config:         ~/.openclaw/
+  Workspace:      cat ~/.openclaw/openclaw.json| grep 'token:' | grep -v 'mode' | cut -d '"' -f4
+  Install dir:    /Users/frank/openclaw
+
+Useful commands:
+  View logs:      docker logs -f openclaw-gateway
+  Stop:           cd /Users/frank/openclaw && docker compose down
+  Start:          cd /Users/frank/openclaw && docker compose up -d openclaw-gateway
+  Restart:        cd /Users/frank/openclaw && docker compose restart openclaw-gateway
+  CLI:            cd /Users/frank/openclaw && docker compose run --rm openclaw-cli <command>
+  Update:         docker pull ghcr.io/phioranex/openclaw-docker:latest && cd /Users/frank/openclaw && docker compose up -d
+```
 
 ### 参考资料
 
